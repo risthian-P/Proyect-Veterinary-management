@@ -45,7 +45,11 @@ function App() {
                     <Route index element={<Perfil />} />
                     <Route path='listar' element={<Listar />} />
                     <Route path='visualizar/:id' element={<Visualizar />} />
-                    <Route path='crear' element={<Crear />} />
+                    <Route path='crear' element={
+                        <PrivateRouteWithRole>
+                          <Crear />
+                        </PrivateRouteWithRole>
+                    }/>
                     <Route path='actualizar/:id' element={<Actualizar />} />
                   </Route>
                 </Routes>
