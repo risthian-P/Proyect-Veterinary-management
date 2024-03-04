@@ -16,13 +16,14 @@ import { Confirmar } from './paginas/Confirmar'
 import Restablecer from './paginas/Restablecer'
 import { AuthProvider } from './context/AuthProvider'
 import { PrivateRoute } from './routes/PrivateRoute'
-
+import { TratamientosProvider } from './context/TratamientosProvider'
 
 function App() {
   return (
     <>
     <BrowserRouter>
       <AuthProvider>
+        <TratamientosProvider>
 
           <Routes>
             
@@ -48,10 +49,11 @@ function App() {
                     <Route path='actualizar/:id' element={<Actualizar />} />
                   </Route>
                 </Routes>
-              </PrivateRoute>
-        } />
+              </PrivateRoute>} />
 
           </Routes>
+        </TratamientosProvider>
+
       </AuthProvider>
     </BrowserRouter>
     </>
